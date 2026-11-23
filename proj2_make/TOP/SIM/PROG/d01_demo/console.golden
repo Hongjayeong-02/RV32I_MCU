@@ -1,0 +1,14 @@
+
+RV32I MCU demo (UART V4 + 5-stage core)
+> help
+help | led <hex> | sw | stat | exit
+> led a
+led=a
+> sw
+sw=5
+> hello
+?
+> stat
+cycle=0001352f instret=000084cb tick=0031 btn=01
+> exit
+bye

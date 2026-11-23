@@ -1,0 +1,11 @@
+# post-route GLS (Xcelium) : mcu_top P&R netlist + SDF, firmware p03_uart (ROM in the netlist)
+# RTL halt cycle : 41501
+
+gl_max : PASS 2 / FAIL 0 | MCU p03_uart ALL PASS  gls halt@41501
+    halt cycle 41501 (RTL 41501) -> same
+    	Annotation completed with 0 Errors and 2377 Warnings | *E, 0 | SDFINF 0 (must be 0)
+    timing violations 0 (synchronizer 1st stage 0, other 0)
+gl_min : PASS 2 / FAIL 0 | MCU p03_uart ALL PASS  gls halt@41501
+    halt cycle 41501 (RTL 41501) -> same
+    	Annotation completed with 0 Errors and 2377 Warnings | *E, 0 | SDFINF 0 (must be 0)
+    timing violations 0 (synchronizer 1st stage 0, other 0)

@@ -1,0 +1,13 @@
+# post-route GLS (Xcelium) : mcu_chip_top P&R netlist + SDF, firmware d01_demo (ROM in the netlist)
+# RTL halt cycle : 126885
+
+gl_demo_max : PASS 4 / FAIL 0 | DEMO ALL PASS  chars=199 halt@126885
+    PASS: D4 console == golden (199 bytes)
+    halt cycle 126885 (RTL 126885) -> same
+    	Annotation completed with 0 Errors and 2381 Warnings | *E, 0 | SDFINF 0 (must be 0)
+    timing violations 3 (synchronizer 1st stage 3, other 0)
+gl_demo_min : PASS 0 / FAIL 0 | 
+    	module worklib.NAND4XL:v
+    halt cycle  (RTL 126885) -> differs
+    	Annotation completed with 0 Errors and 2387 Warnings | *E, 1 | SDFINF 0 (must be 0)
+    timing violations 0 (synchronizer 1st stage 0, other 0)

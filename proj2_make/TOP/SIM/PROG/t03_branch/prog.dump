@@ -1,0 +1,90 @@
+
+/home/claude/RV32I_MCU/tools/build/t03_branch/prog.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	fff00093          	addi	ra,zero,-1
+   4:	00100113          	addi	sp,zero,1
+   8:	00000513          	addi	a0,zero,0
+   c:	00210463          	beq	sp,sp,14 <_start+0x14>
+  10:	1180006f          	jal	zero,128 <fail>
+  14:	00209463          	bne	ra,sp,1c <_start+0x1c>
+  18:	1100006f          	jal	zero,128 <fail>
+  1c:	0020c463          	blt	ra,sp,24 <_start+0x24>
+  20:	1080006f          	jal	zero,128 <fail>
+  24:	00115463          	bge	sp,ra,2c <_start+0x2c>
+  28:	1000006f          	jal	zero,128 <fail>
+  2c:	00116463          	bltu	sp,ra,34 <_start+0x34>
+  30:	0f80006f          	jal	zero,128 <fail>
+  34:	0020f463          	bgeu	ra,sp,3c <_start+0x3c>
+  38:	0f00006f          	jal	zero,128 <fail>
+  3c:	0e208663          	beq	ra,sp,128 <fail>
+  40:	0e211463          	bne	sp,sp,128 <fail>
+  44:	0e114263          	blt	sp,ra,128 <fail>
+  48:	0e20d063          	bge	ra,sp,128 <fail>
+  4c:	0c20ee63          	bltu	ra,sp,128 <fail>
+  50:	0c117c63          	bgeu	sp,ra,128 <fail>
+  54:	00215463          	bge	sp,sp,5c <_start+0x5c>
+  58:	0d00006f          	jal	zero,128 <fail>
+  5c:	01400193          	addi	gp,zero,20
+  60:	00000213          	addi	tp,zero,0
+
+00000064 <loop>:
+  64:	00320233          	add	tp,tp,gp
+  68:	fff18193          	addi	gp,gp,-1
+  6c:	fe019ce3          	bne	gp,zero,64 <loop>
+  70:	0d200f13          	addi	t5,zero,210
+  74:	01e20c63          	beq	tp,t5,8c <loop+0x28>
+  78:	40003fb7          	lui	t6,0x40003
+  7c:	02300f13          	addi	t5,zero,35
+  80:	01efa223          	sw	t5,4(t6) # 40003004 <__stack_top+0x30002c04>
+  84:	000fa023          	sw	zero,0(t6)
+  88:	0000006f          	jal	zero,88 <loop+0x24>
+  8c:	090002ef          	jal	t0,11c <sub1>
+  90:	00130313          	addi	t1,t1,1
+  94:	09900f13          	addi	t5,zero,153
+  98:	01e38c63          	beq	t2,t5,b0 <loop+0x4c>
+  9c:	40003fb7          	lui	t6,0x40003
+  a0:	02700f13          	addi	t5,zero,39
+  a4:	01efa223          	sw	t5,4(t6) # 40003004 <__stack_top+0x30002c04>
+  a8:	000fa023          	sw	zero,0(t6)
+  ac:	0000006f          	jal	zero,ac <loop+0x48>
+  b0:	00100f13          	addi	t5,zero,1
+  b4:	01e30c63          	beq	t1,t5,cc <loop+0x68>
+  b8:	40003fb7          	lui	t6,0x40003
+  bc:	02800f13          	addi	t5,zero,40
+  c0:	01efa223          	sw	t5,4(t6) # 40003004 <__stack_top+0x30002c04>
+  c4:	000fa023          	sw	zero,0(t6)
+  c8:	0000006f          	jal	zero,c8 <loop+0x64>
+  cc:	00000417          	auipc	s0,0x0
+  d0:	01440413          	addi	s0,s0,20 # e0 <loop+0x7c>
+  d4:	00140413          	addi	s0,s0,1
+  d8:	000404e7          	jalr	s1,0(s0)
+  dc:	04c0006f          	jal	zero,128 <fail>
+  e0:	0080006f          	jal	zero,e8 <loop+0x84>
+  e4:	0440006f          	jal	zero,128 <fail>
+  e8:	00000597          	auipc	a1,0x0
+  ec:	01058593          	addi	a1,a1,16 # f8 <loop+0x94>
+  f0:	00058067          	jalr	zero,0(a1)
+  f4:	0340006f          	jal	zero,128 <fail>
+  f8:	00000463          	beq	zero,zero,100 <loop+0x9c>
+  fc:	02000663          	beq	zero,zero,128 <fail>
+ 100:	02001463          	bne	zero,zero,128 <fail>
+ 104:	00000463          	beq	zero,zero,10c <loop+0xa8>
+ 108:	0200006f          	jal	zero,128 <fail>
+ 10c:	40003fb7          	lui	t6,0x40003
+ 110:	00100f13          	addi	t5,zero,1
+ 114:	01efa023          	sw	t5,0(t6) # 40003000 <__stack_top+0x30002c00>
+ 118:	0000006f          	jal	zero,118 <loop+0xb4>
+
+0000011c <sub1>:
+ 11c:	09900393          	addi	t2,zero,153
+ 120:	00000313          	addi	t1,zero,0
+ 124:	00028067          	jalr	zero,0(t0)
+
+00000128 <fail>:
+ 128:	40003fb7          	lui	t6,0x40003
+ 12c:	000fa023          	sw	zero,0(t6) # 40003000 <__stack_top+0x30002c00>
+ 130:	0000006f          	jal	zero,130 <fail+0x8>

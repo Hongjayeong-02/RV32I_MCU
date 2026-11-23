@@ -1,0 +1,9 @@
+# M1 leaf-module RTL simulation results (Xcelium), from SIM/FUNCTION/log/*.log
+
+alu         PASS   19  FAIL   0  *E  0  | ALU ALL PASS  checks=102000
+decoder     PASS   75  FAIL   0  *E  0  | DECODER ALL PASS  vectors=75
+imm_gen     PASS   21  FAIL   0  *E  0  | IMM_GEN ALL PASS  vectors=21
+regfile     PASS    4  FAIL   0  *E  0  | REGFILE ALL PASS  cycles=3037
+ram_256B    PASS    4  FAIL   0  *E  0  | RAM ALL PASS  ADDR_W=6 (256 B)
+ram_1KB     PASS    4  FAIL   0  *E  0  | RAM ALL PASS  ADDR_W=8 (1024 B)
+ram_2KB     PASS    4  FAIL   0  *E  0  | RAM ALL PASS  ADDR_W=9 (2048 B)
