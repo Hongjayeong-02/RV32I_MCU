@@ -1,0 +1,61 @@
+lui x5, 0x12345
+lui x0, 1
+auipc x6, 0xfffff
+jal x1, .+2048
+jal x0, .-4
+jalr x1, 12(x5)
+beq x1, x2, .+16
+bne x3, x4, .-8
+blt x5, x6, .+4
+bge x7, x8, .+4
+bltu x9, x10, .+4
+bgeu x11, x12, .+4
+lb x5, -1(x6)
+lh x5, 2(x6)
+lw x5, 4(x6)
+lbu x5, 0(x6)
+lhu x0, 0(x6)
+sb x5, -3(x6)
+sh x5, 2(x6)
+sw x5, 8(x6)
+addi x5, x6, -2048
+slti x5, x6, 1
+sltiu x5, x6, 1
+xori x5, x6, -1
+ori x5, x6, 7
+andi x5, x6, 15
+slli x5, x6, 31
+srli x5, x6, 1
+srai x5, x6, 31
+add x5, x6, x7
+sub x5, x6, x7
+sll x5, x6, x7
+slt x5, x6, x7
+sltu x5, x6, x7
+xor x5, x6, x7
+srl x5, x6, x7
+sra x5, x6, x7
+or x5, x6, x7
+and x5, x6, x7
+add x0, x6, x7
+fence
+ecall
+ebreak
+mret
+csrrw x5, mstatus, x6
+csrrw x0, mtvec, x6
+csrrs x5, mie, x6
+csrrs x5, mhartid, x0
+csrrc x5, mip, x7
+csrrc x5, mip, x0
+csrrwi x5, mscratch, 3
+csrrsi x5, mstatus, 8
+csrrsi x5, mstatus, 0
+csrrci x0, mstatus, 8
+beq x1, x2, .-4096
+bne x1, x2, .+4094
+jal x1, .+1048574
+jal x1, .-1048576
+sw x5, 2047(x6)
+sw x5, -2048(x6)
+addi x5, x6, 2047
