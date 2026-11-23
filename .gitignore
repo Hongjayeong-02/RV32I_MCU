@@ -1,0 +1,57 @@
+# ---- simulator / tool scratch ----
+*.log
+*.logv*
+*.cmd
+*.history
+*.stdout
+*.vcd
+*.shm/
+*.trn
+*.dsn
+*.trace
+*.ev
+*.replay
+*.X
+xcelium.d/
+xrun.history
+INCA_libs/
+__pycache__/
+TOOLS/build/
+
+# ---- PDK / library derived data : never public ----
+# (reports, netlists, SDF/SPEF/DEF/GDS and LEC packages carry library names / paths)
+*.lib
+*.lef
+*.gds
+*.oas
+*.sdf
+*.spef
+*.def
+*.out
+proj2_make/TOP/SYN/log/
+proj2_make/TOP/SYN/netlist_*/
+proj2_make/TOP/SYN/report*/
+proj2_make/TOP/SYN/fv*/
+proj2_make/TOP/SYN/script/lib_setup.tcl
+proj2_make/TOP/APR/scripts/pdk_setup.tcl
+proj2_make/TOP/APR/scripts_chip/pdk_lef_chip.tcl
+proj2_make/TOP/APR/scripts_chip/pdk_mmmc_chip.tcl
+proj2_make/TOP/APR/work*/
+proj2_make/TOP/APR/log/
+proj2_make/TOP/MERGE/work/
+
+# ---- simulation outputs (summaries are kept) ----
+proj2_make/TOP/SIM/*/log/
+# ISS results are kept (the server has no RISC-V gcc / python3)
+!proj2_make/TOP/SIM/PROG/*/expected.trace
+proj2_make/TOP/SIM/GLS/sdf_*.cmd
+proj2_make/TOP/SIM/GLS/gls_pass.vh
+proj2_make/TOP/SIM/GLS/gls_probe.v
+proj2_make/TOP/SIM/GLS/*_viol_scope.txt
+proj2_make/TOP/SIM/GLS/*_console.txt
+proj2_make/TOP/SIM/GLS/chip*/*
+!proj2_make/TOP/SIM/GLS/chip/gls_results.txt
+!proj2_make/TOP/SIM/GLS/chip/gls_demo_results.txt
+proj2_make/TOP/APR/old_init_scripts/
+*.dat/
+*.tch
